@@ -35,6 +35,18 @@ func ReadTasts() {
 	}
 }
 
+func UpdateTask(id int, name string, status bool) {
+	for i, task := range tasks {
+		if task.ID == id {
+			tasks[i].TaskName = name
+			tasks[i].Status = status
+			fmt.Println("Задача обновлена:", tasks[i])
+			return
+		}
+	}
+	fmt.Printf("Задача с %d не найдена", id)
+}
+
 func main() {
 	CreateTask("Сделать функцию для создании новый задачи", false)
 }
