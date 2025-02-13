@@ -1,3 +1,9 @@
+ HEAD
+
+# to-do-list
+Project: To-Do List 
+
+23499ec (добавлена функция CreatTask создания новой задачи)
 # README
 
 ## About
@@ -17,3 +23,7 @@ to this in your browser, and you can call your Go code from devtools.
 ## Building
 
 To build a redistributable, production mode package, use `wails build`.
+HEAD
+
+58a7cab (Определила структуру данных)
+23499ec (добавлена функция CreatTask создания новой задачи)

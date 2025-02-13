@@ -4,6 +4,7 @@ go 1.22.0
 
 toolchain go1.24.0
 
+HEAD
 require github.com/wailsapp/wails/v2 v2.9.3
 
 require (
@@ -36,4 +37,6 @@ require (
 	golang.org/x/text v0.22.0 // indirect
 )
 
+
+23499ec (добавлена функция CreatTask создания новой задачи)
 // replace github.com/wailsapp/wails/v2 v2.9.3 => /home/amirkulova/go/pkg/mod
