@@ -27,7 +27,7 @@ func CreateTask(name string, status bool) {
 	// fmt.Println("Новый задача добавлена:", newTask)
 }
 
-func ReadTasts() {
+func ReadTasks() {
 	fmt.Println("Полученные задачи:")
 	for _, task := range tasks {
 		jsonData, _ := json.Marshal(task)
@@ -47,6 +47,32 @@ func UpdateTask(id int, name string, status bool) {
 	fmt.Printf("Задача с %d не найдена", id)
 }
 
+func removeTaskByIndex(index int) {
+	tasks = append(tasks[:index], tasks[index+1:]...)
+}
+
+func RemoveTask(id int) {
+	for i, task := range tasks {
+		if task.ID == id {
+			removeTaskByIndex(i)
+			fmt.Printf("Задача по индексу %d удалена", id)
+			return
+		}
+	}
+	fmt.Printf("Задача по индексу %d НЕ найдена", id)
+}
+
 func main() {
 	CreateTask("Сделать функцию для создании новый задачи", false)
+	CreateTask("Сделать функцию для чтение задач", true)
+	CreateTask("Сделать функцию для изминение задачи", false)
+	CreateTask("Сделать функцию для удаление задачи", false)
+	ReadTasks()
+
+	UpdateTask(4, "Сделать функцию для удаление задачи", true)
+
+	RemoveTask(1)
+	RemoveTask(6)
+
+	ReadTasks()
 }
